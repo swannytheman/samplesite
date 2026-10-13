@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLUX Med Spa | West Town Chicago</title>
+<meta name="description" content="SOLUX Med Spa in Chicago: injectables, laser, skin and body treatments. Book online in under a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2b2522;
+    --muted: #6f655f;
+    --bg: #fbf8f5;
+    --surface: #ffffff;
+    --sand: #f1e8df;
+    --line: #e6dbd0;
+    --accent: #b0876a;
+    --accent-dark: #8c6649;
+    --success: #4f7a5a;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(60, 40, 25, .08);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--bg); line-height: 1.6; font-weight: 400; }
+  a { color: inherit; }
+  img, svg { display: block; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; }
+  h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--accent-dark); font-weight: 600; margin-bottom: 14px; }
+  .lead { color: var(--muted); max-width: 620px; }
+  section { padding: 96px 0; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border-radius: 999px; font: 500 .95rem var(--sans); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: .2s; }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--ink); color: #fff; }
+  .btn:disabled { opacity: .35; cursor: not-allowed; }
+
+  /* concept bar */
+  .concept { background: var(--ink); color: #f1e8df; font-size: .8rem; text-align: center; padding: 8px 16px; }
+  .concept strong { color: #fff; font-weight: 600; }
+
+  /* nav */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(251, 248, 245, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { font-family: var(--serif); font-size: 1.7rem; letter-spacing: .28em; text-decoration: none; font-weight: 600; }
+  .logo small { display: block; font-family: var(--sans); font-size: .58rem; letter-spacing: .4em; color: var(--muted); font-weight: 500; margin-top: -4px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: .9rem; color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links .btn { color: #fff; padding: 10px 20px; }
+  @media (max-width: 860px) { .nav-links a:not(.btn) { display: none; } }
+
+  /* hero */
+  .hero { padding: 80px 0 96px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.8rem, 6vw, 4.6rem); margin-bottom: 22px; }
+  .hero h1 em { color: var(--accent-dark); }
+  .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 32px; max-width: 520px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .trust { display: flex; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
+  .trust div { font-size: .82rem; color: var(--muted); }
+  .trust strong { display: block; font-family: var(--serif); font-size: 1.8rem; color: var(--ink); font-weight: 500; }
+  .hero-art { aspect-ratio: 4/5; border-radius: 200px 200px var(--radius) var(--radius); background:
+      radial-gradient(circle at 30% 25%, #fff6ee 0, transparent 45%),
+      radial-gradient(circle at 75% 70%, #d9b89c 0, transparent 55%),
+      linear-gradient(160deg, #efe1d4, #c9a184); position: relative; box-shadow: var(--shadow); }
+  .hero-card { position: absolute; left: -28px; bottom: 36px; background: var(--surface); border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow); display: flex; gap: 12px; align-items: center; max-width: 270px; }
+  .hero-card .dot { width: 40px; height: 40px; border-radius: 50%; background: var(--sand); display: grid; place-items: center; flex-shrink: 0; color: var(--success); }
+  .hero-card p { font-size: .82rem; margin: 0; color: var(--ink); }
+  .hero-card span { color: var(--muted); font-size: .75rem; }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { max-width: 380px; width: 100%; margin: 0 auto; }
+    .hero-card { left: 12px; }
+  }
+
+  /* services */
+  .services { background: var(--surface); }
+  .svc-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .svc { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; transition: .2s; display: flex; flex-direction: column; background: var(--bg); }
+  .svc:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+  .svc .ico { width: 44px; height: 44px; border-radius: 50%; background: var(--sand); display: grid; place-items: center; margin-bottom: 18px; color: var(--accent-dark); }
+  .svc h3 { font-size: 1.55rem; margin-bottom: 8px; }
+  .svc p { color: var(--muted); font-size: .92rem; flex: 1; }
+  .svc button { margin-top: 18px; align-self: flex-start; background: none; border: 0; font: 600 .85rem var(--sans); color: var(--accent-dark); cursor: pointer; padding: 0; letter-spacing: .02em; }
+  .svc button:hover { text-decoration: underline; }
+
+  /* booking */
+  .booking { background: var(--sand); }
+  .book-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+  .perks { list-style: none; margin-top: 28px; display: grid; gap: 14px; }
+  .perks li { display: flex; gap: 12px; align-items: flex-start; font-size: .95rem; }
+  .perks svg { color: var(--success); flex-shrink: 0; margin-top: 3px; }
+  .widget { background: var(--surface); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+  .steps { display: flex; border-bottom: 1px solid var(--line); }
+  .steps div { flex: 1; text-align: center; padding: 16px 6px; font-size: .78rem; color: var(--muted); border-bottom: 2px solid transparent; }
+  .steps div.active { color: var(--ink); border-color: var(--accent); font-weight: 600; }
+  .steps div.done { color: var(--success); }
+  .panel { padding: 28px; display: none; }
+  .panel.show { display: block; }
+  .panel h3 { font-size: 1.6rem; margin-bottom: 18px; }
+  .opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .opt { border: 1px solid var(--line); border-radius: 12px; padding: 14px; cursor: pointer; text-align: left; background: var(--bg); font: inherit; color: inherit; transition: .15s; }
+  .opt:hover { border-color: var(--accent); }
+  .opt.sel { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .opt strong { display: block; font-size: .92rem; font-weight: 600; }
+  .opt span { font-size: .78rem; opacity: .7; }
+  .dates { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 20px; }
+  .date { min-width: 64px; text-align: center; padding: 10px 6px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font: inherit; color: inherit; }
+  .date small { display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .date b { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; }
+  .date.sel { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .date.sel small { color: #e8dccf; }
+  .date:disabled { opacity: .35; cursor: not-allowed; }
+  .times { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+  .time { padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font: 500 .88rem var(--sans); color: inherit; }
+  .time.sel { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .time:disabled { text-decoration: line-through; opacity: .35; cursor: not-allowed; }
+  .hint { font-size: .85rem; color: var(--muted); }
+  .form { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+  .form .full { grid-column: 1 / -1; }
+  label { font-size: .78rem; font-weight: 500; color: var(--muted); display: block; margin-bottom: 6px; }
+  input, textarea, select { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); font: inherit; background: var(--bg); color: var(--ink); }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  .check { display: flex; gap: 10px; align-items: center; font-size: .85rem; color: var(--muted); }
+  .check input { width: auto; }
+  .summary { background: var(--bg); border-radius: 12px; padding: 14px 16px; font-size: .88rem; margin-bottom: 18px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
+  .back { background: none; border: 0; font: 500 .9rem var(--sans); color: var(--muted); cursor: pointer; }
+  .confirm { text-align: center; padding: 20px 0; }
+  .confirm .tick { width: 64px; height: 64px; border-radius: 50%; background: #e4efe6; color: var(--success); display: grid; place-items: center; margin: 0 auto 18px; }
+  .confirm p { color: var(--muted); max-width: 400px; margin: 0 auto 8px; }
+  .confirm .detail { margin: 20px auto; background: var(--bg); border-radius: 12px; padding: 18px; max-width: 360px; text-align: left; font-size: .9rem; }
+  .confirm .detail div { display: flex; justify-content: space-between; padding: 4px 0; }
+  .confirm .detail span { color: var(--muted); }
+  @media (max-width: 860px) { .book-grid { grid-template-columns: 1fr; } .form { grid-template-columns: 1fr; } }
+
+  /* reviews */
+  .rev-head { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; margin-bottom: 48px; }
+  .score { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 26px; display: flex; gap: 28px; }
+  .score div { text-align: center; }
+  .score strong { font-family: var(--serif); font-size: 2.4rem; font-weight: 500; display: block; line-height: 1; }
+  .score span { font-size: .75rem; color: var(--muted); }
+  .stars { color: var(--accent); letter-spacing: 2px; font-size: .95rem; }
+  .rev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .rev { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .rev-top { display: flex; justify-content: space-between; align-items: center; }
+  .who { display: flex; gap: 10px; align-items: center; }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--sand); display: grid; place-items: center; font-weight: 600; font-size: .85rem; color: var(--accent-dark); }
+  .who b { font-size: .9rem; font-weight: 600; display: block; }
+  .who small { color: var(--muted); font-size: .75rem; }
+  .rev > p { font-size: .93rem; }
+  .reply { border-left: 2px solid var(--accent); background: var(--bg); padding: 12px 14px; border-radius: 0 10px 10px 0; font-size: .86rem; color: var(--muted); }
+  .reply b { color: var(--ink); font-weight: 600; font-size: .8rem; display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+  .badge { font-size: .7rem; font-weight: 600; color: var(--success); background: #e4efe6; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+  .typing { display: inline-flex; gap: 4px; }
+  .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 1s infinite; }
+  .typing i:nth-child(2) { animation-delay: .2s; } .typing i:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+  .leave { margin-top: 40px; background: var(--surface); border: 1px dashed var(--accent); border-radius: var(--radius); padding: 28px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 28px; align-items: start; }
+  .leave h3 { font-size: 1.6rem; margin-bottom: 6px; }
+  .rate { display: flex; gap: 4px; margin-bottom: 12px; }
+  .rate button { background: none; border: 0; font-size: 1.6rem; color: var(--line); cursor: pointer; line-height: 1; }
+  .rate button.on { color: var(--accent); }
+  @media (max-width: 860px) { .rev-head, .leave { grid-template-columns: 1fr; } }
+
+  /* about */
+  .about { background: var(--surface); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-art { aspect-ratio: 1; border-radius: var(--radius); background: linear-gradient(135deg, #e9d8c8, #b88f71); position: relative; overflow: hidden; }
+  .about-art::after { content: "SOLUX"; position: absolute; inset: auto 0 24px; text-align: center; font-family: var(--serif); letter-spacing: .5em; color: rgba(255,255,255,.75); font-size: 2.4rem; }
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+  .pillars div { border-top: 1px solid var(--line); padding-top: 14px; }
+  .pillars b { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; display: block; }
+  .pillars span { font-size: .85rem; color: var(--muted); }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* visit */
+  .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .card h3 { font-size: 1.4rem; margin-bottom: 12px; }
+  .card p, .card li { font-size: .92rem; color: var(--muted); }
+  .hours { list-style: none; }
+  .hours li { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dotted var(--line); }
+  .hours li.today { color: var(--ink); font-weight: 600; }
+  @media (max-width: 860px) { .visit-grid { grid-template-columns: 1fr; } }
+
+  footer { background: var(--ink); color: #cbbfb4; padding: 48px 0 100px; font-size: .85rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer .logo { color: #fff; }
+
+  /* mobile sticky book */
+  .sticky-book { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; display: none; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  @media (max-width: 860px) { .sticky-book { display: flex; } }
+
+  /* chat bubble */
+  .chat-fab { position: fixed; right: 24px; bottom: 24px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--accent-dark); color: #fff; border: 0; cursor: pointer; display: grid; place-items: center; box-shadow: var(--shadow); }
+  .chat { position: fixed; right: 24px; bottom: 94px; z-index: 61; width: 340px; max-width: calc(100vw - 32px); background: var(--surface); border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,.18); display: none; flex-direction: column; overflow: hidden; }
+  .chat.open { display: flex; }
+  .chat-h { background: var(--ink); color: #fff; padding: 14px 18px; font-size: .9rem; }
+  .chat-h small { display: block; color: #c9bdb2; font-size: .75rem; }
+  .chat-b { padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow-y: auto; }
+  .msg { padding: 10px 14px; border-radius: 14px; font-size: .86rem; max-width: 85%; }
+  .msg.bot { background: var(--sand); align-self: flex-start; border-bottom-left-radius: 4px; }
+  .msg.me { background: var(--ink); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .quick { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 16px 16px; }
+  .quick button { border: 1px solid var(--line); background: var(--bg); border-radius: 99px; padding: 6px 12px; font: .78rem var(--sans); cursor: pointer; color: var(--ink); }
+  @media (max-width: 860px) { .chat-fab { bottom: 84px; right: 16px; } .chat { bottom: 152px; right: 16px; } }
+
+  .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-120px); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 99px; font-size: .88rem; z-index: 100; transition: .3s; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="concept">✨ <strong>Website concept</strong> prepared for SOLUX Med Spa by Wingtech Partners. Booking, reviews, and chat are working demos.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">SOLUX<small>MED SPA · CHICAGO</small></a>
+    <nav class="nav-links">
+      <a href="#services">Treatments</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit</a>
+      <a href="#book" class="btn btn-primary">Book Online</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Medical aesthetics · West Town, Chicago</div>
+      <h1>Look like you.<br><em>Just more rested.</em></h1>
+      <p>Natural-looking injectables, advanced laser, and results-driven skin treatments from a medically led team. Book any time, day or night, in under 60 seconds.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-primary">Book an appointment</a>
+        <a href="#services" class="btn btn-ghost">Explore treatments</a>
+      </div>
+      <div class="trust">
+        <div><strong>4.6★</strong>128+ Google reviews</div>
+        <div><strong>&lt; 24h</strong>Review response time</div>
+        <div><strong>24/7</strong>Online booking</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-card">
+        <div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div><p><b>Jordan</b> just booked HydraFacial</p><span>Thursday · 4:30 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <div class="eyebrow">Treatments</div>
+        <h2>Everything your skin needs, under one roof</h2>
+        <p class="lead">Not sure where to start? Book a complimentary consultation and we'll build a plan around your goals.</p>
+      </div>
+      <a href="#book" class="btn btn-ghost">Book a free consult</a>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="wrap book-grid">
+    <div>
+      <div class="eyebrow">Online booking</div>
+      <h2>Book in under a minute</h2>
+      <p class="lead">No phone tag, no waiting for a callback. Pick a treatment, choose a time that works, and you're done.</p>
+      <ul class="perks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Real-time availability, 24/7</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Instant text and email confirmation</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Automatic reminders cut no-shows</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Reschedule from your phone in one tap</li>
+      </ul>
+    </div>
+
+    <div class="widget" id="widget">
+      <div class="steps">
+        <div data-s="1" class="active">1. Treatment</div>
+        <div data-s="2">2. Date &amp; time</div>
+        <div data-s="3">3. Details</div>
+      </div>
+
+      <div class="panel show" data-p="1">
+        <h3>What are you coming in for?</h3>
+        <div class="opts" id="bookOpts"></div>
+        <div class="nav-row"><span class="hint" id="svcHint">Select a treatment</span><button class="btn btn-primary" id="to2" disabled>Continue</button></div>
+      </div>
+
+      <div class="panel" data-p="2">
+        <h3>Pick a time</h3>
+        <div class="dates" id="dates"></div>
+        <div class="times" id="times"></div>
+        <div class="nav-row"><button class="back" data-back="1">← Back</button><button class="btn btn-primary" id="to3" disabled>Continue</button></div>
+      </div>
+
+      <div class="panel" data-p="3">
+        <h3>Almost done</h3>
+        <div class="summary" id="summary"></div>
+        <form class="form" id="bookForm">
+          <div><label for="fn">First name</label><input id="fn" required autocomplete="given-name"></div>
+          <div><label for="ln">Last name</label><input id="ln" required autocomplete="family-name"></div>
+          <div><label for="ph">Mobile</label><input id="ph" type="tel" required autocomplete="tel" placeholder="(312) 555-0123"></div>
+          <div><label for="em">Email</label><input id="em" type="email" required autocomplete="email"></div>
+          <div class="full"><label for="nt">Anything we should know? (optional)</label><textarea id="nt" rows="2"></textarea></div>
+          <label class="check full"><input type="checkbox" checked> Text me a reminder 24 hours before</label>
+        </form>
+        <div class="nav-row"><button class="back" data-back="2">← Back</button><button class="btn btn-primary" id="confirmBtn">Confirm booking</button></div>
+      </div>
+
+      <div class="panel" data-p="4">
+        <div class="confirm">
+          <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>You're booked!</h3>
+          <p id="confirmMsg"></p>
+          <div class="detail" id="confirmDetail"></div>
+          <button class="btn btn-ghost" id="restart">Book another</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div>
+        <div class="eyebrow">Client love</div>
+        <h2>Every review gets a personal reply</h2>
+        <p class="lead">We read every review and respond within a day, usually within hours. Your feedback shapes how we care for you.</p>
+      </div>
+      <div class="score">
+        <div><strong>4.6</strong><span class="stars">★★★★★</span><br><span>Google rating</span></div>
+        <div><strong>100%</strong><span>&nbsp;</span><br><span>Reviews answered</span></div>
+        <div><strong>3 hrs</strong><span>&nbsp;</span><br><span>Avg. reply time</span></div>
+      </div>
+    </div>
+    <div class="rev-grid" id="revGrid"></div>
+
+    <div class="leave">
+      <div>
+        <h3>Recently visited?</h3>
+        <p class="hint">Leave a review below and watch how quickly you hear back. In the live version this posts to Google and alerts the team instantly.</p>
+      </div>
+      <form id="revForm">
+        <div class="rate" id="rate" aria-label="Rating"></div>
+        <div style="display:grid;gap:12px">
+          <input id="rName" placeholder="Your first name" required>
+          <textarea id="rText" rows="3" placeholder="How was your visit?" required></textarea>
+          <button class="btn btn-primary" style="justify-self:start">Post review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art" aria-hidden="true"></div>
+    <div>
+      <div class="eyebrow">About SOLUX</div>
+      <h2>Medical expertise, boutique warmth</h2>
+      <p class="lead">SOLUX is a medically directed med spa in Chicago's West Town. Our clients tell us they stay because we keep up with the newest treatments and technology, and because our team takes the time to explain every option before anything begins.</p>
+      <div class="pillars">
+        <div><b>Medically led</b><span>Every treatment overseen by licensed medical professionals</span></div>
+        <div><b>Natural results</b><span>Subtle enhancements, never overdone</span></div>
+        <div><b>Latest technology</b><span>Including Sofwave™ ultrasound skin tightening</span></div>
+        <div><b>Personal plans</b><span>Complimentary consults tailored to your goals</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit us</div>
+    <h2>We'd love to see you</h2>
+    <div class="visit-grid">
+      <div class="card">
+        <h3>Location</h3>
+        <p>777 N Green St, Suite 4<br>Chicago, IL 60642</p>
+        <p style="margin-top:12px"><a href="https://maps.google.com/?q=777+N+Green+St+Suite+4+Chicago+IL+60642" target="_blank" rel="noopener">Get directions →</a></p>
+      </div>
+      <div class="card">
+        <h3>Hours</h3>
+        <ul class="hours" id="hours"></ul>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p><a href="tel:+13127550088">(312) 755-0088</a></p>
+        <p style="margin-top:12px">Prefer not to call? <a href="#book">Book online</a> any time, or tap the chat bubble for an instant answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="#" class="logo">SOLUX</a><p style="margin-top:8px">777 N Green St, Suite 4 · Chicago, IL · (312) 755-0088</p></div>
+    <div style="max-width:420px">Website concept by Wingtech Partners. Testimonials shown are placeholders for demonstration and would be replaced with SOLUX's live Google reviews.</div>
+  </div>
+</footer>
+
+<a href="#book" class="btn btn-primary sticky-book">Book an appointment</a>
+
+<button class="chat-fab" id="chatFab" aria-label="Chat with us">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<div class="chat" id="chat">
+  <div class="chat-h">SOLUX Concierge<small>Instant answers, 24/7</small></div>
+  <div class="chat-b" id="chatBody"><div class="msg bot">Hi! 👋 I can answer questions or get you booked. What can I help with?</div></div>
+  <div class="quick" id="quick">
+    <button>Book an appointment</button>
+    <button>What are your hours?</button>
+    <button>Where are you located?</button>
+    <button>Do you offer free consults?</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const ICONS = {
+  syringe: '<path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>',
+  drop: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/>',
+  sparkle: '<path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  wave: '<path d="M2 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/>',
+  leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/>',
+  body: '<circle cx="12" cy="5" r="2"/><path d="M12 7v7M8 10h8M9 21l3-7 3 7"/>',
+  iv: '<path d="M10 2h4M12 2v4M8 6h8v8a4 4 0 0 1-8 0zM12 18v4"/>'
+};
+const SERVICES = [
+  { name: 'Botox & Neurotoxins', icon: 'syringe', dur: 30, desc: 'Soften forehead lines, crow\'s feet and frown lines for a refreshed, natural look.' },
+  { name: 'Dermal Fillers', icon: 'drop', dur: 45, desc: 'Restore volume to lips, cheeks and under-eyes with expert, balanced placement.' },
+  { name: 'Sofwave™ Skin Tightening', icon: 'wave', dur: 60, desc: 'Non-invasive ultrasound that lifts and tightens the brow, neck and jawline.' },
+  { name: 'Laser Hair Removal', icon: 'sun', dur: 30, desc: 'Long-lasting smooth skin with fast, comfortable sessions for any area.' },
+  { name: 'Microneedling & PRP', icon: 'sparkle', dur: 60, desc: 'Boost collagen to refine texture, pores and acne scarring.' },
+  { name: 'Facials & Chemical Peels', icon: 'leaf', dur: 60, desc: 'Customized facials and peels for glow, clarity and even tone.' },
+  { name: 'Body Contouring', icon: 'body', dur: 60, desc: 'CoolSculpting® and lymphatic drainage to sculpt and de-puff.' },
+  { name: 'IV Therapy', icon: 'iv', dur: 45, desc: 'Hydration and vitamin drips for energy, recovery and radiant skin.' },
+  { name: 'Free Consultation', icon: 'sparkle', dur: 20, desc: 'Not sure what you need? Meet with our team and leave with a plan.' }
+];
+// 0=Sun ... 6=Sat. [open, close] in 24h hours; null = closed
+const HOURS = { 0: null, 1: null, 2: [10, 17], 3: [10, 17], 4: [10, 19], 5: [10, 17], 6: [10, 14] };
+const DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const svg = (k, s = 22) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg>`;
+const fmtHour = h => { const hr = Math.floor(h), m = h % 1 ? '30' : '00'; return `${hr % 12 || 12}:${m} ${hr < 12 ? 'AM' : 'PM'}`; };
+const $ = s => document.querySelector(s);
+function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2600); }
+
+// Services grid
+$('#svcGrid').innerHTML = SERVICES.map((s, i) => `
+  <div class="svc"><div class="ico">${svg(s.icon)}</div><h3>${s.name}</h3><p>${s.desc}</p>
+  <button data-i="${i}">Book this →</button></div>`).join('');
+$('#svcGrid').addEventListener('click', e => {
+  const b = e.target.closest('button[data-i]'); if (!b) return;
+  pickService(+b.dataset.i); $('#book').scrollIntoView();
+});
+
+// Booking widget
+const state = { svc: null, date: null, time: null };
+$('#bookOpts').innerHTML = SERVICES.map((s, i) => `<button class="opt" data-i="${i}"><strong>${s.name}</strong><span>${s.dur} min</span></button>`).join('');
+$('#bookOpts').addEventListener('click', e => { const b = e.target.closest('.opt'); if (b) pickService(+b.dataset.i); });
+function pickService(i) {
+  state.svc = SERVICES[i]; go(1);
+  document.querySelectorAll('#bookOpts .opt').forEach(o => o.classList.toggle('sel', +o.dataset.i === i));
+  $('#to2').disabled = false; $('#svcHint').textContent = `${state.svc.name} · ${state.svc.dur} min`;
+}
+function go(n) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('show', +p.dataset.p === n));
+  document.querySelectorAll('.steps div').forEach(s => { const k = +s.dataset.s; s.className = k === n ? 'active' : k < n ? 'done' : ''; });
+}
+document.querySelectorAll('[data-back]').forEach(b => b.onclick = () => go(+b.dataset.back));
+$('#to2').onclick = () => { renderDates(); go(2); };
+$('#to3').onclick = () => {
+  const d = state.date;
+  $('#summary').innerHTML = `<span><b>${state.svc.name}</b></span><span>${d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} · ${state.time}</span>`;
+  go(3);
+};
+
+// Pseudo-random but stable "booked" slots so the calendar looks real
+function seeded(n) { const x = Math.sin(n) * 10000; return x - Math.floor(x); }
+function renderDates() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  let html = '';
+  for (let i = 0; i < 21; i++) {
+    const d = new Date(today); d.setDate(today.getDate() + i);
+    const closed = !HOURS[d.getDay()];
+    html += `<button class="date" ${closed ? 'disabled' : ''} data-t="${d.getTime()}"><small>${d.toLocaleDateString('en-US', { weekday: 'short' })}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString('en-US', { month: 'short' })}</small></button>`;
+  }
+  $('#dates').innerHTML = html;
+  $('#times').innerHTML = '<p class="hint">Choose a day to see open times.</p>';
+  state.date = null; state.time = null; $('#to3').disabled = true;
+  const first = document.querySelector('.date:not([disabled])'); if (first) first.click();
+}
+$('#dates').addEventListener('click', e => {
+  const b = e.target.closest('.date'); if (!b || b.disabled) return;
+  document.querySelectorAll('.date').forEach(x => x.classList.toggle('sel', x === b));
+  state.date = new Date(+b.dataset.t); state.time = null; $('#to3').disabled = true;
+  const [o, c] = HOURS[state.date.getDay()];
+  const now = new Date(); let slots = '';
+  for (let h = o; h + state.svc.dur / 60 <= c; h += .5) {
+    const slot = new Date(state.date); slot.setHours(Math.floor(h), h % 1 ? 30 : 0);
+    const taken = slot < now || seeded(+b.dataset.t / 1e5 + h * 7) < .35;
+    slots += `<button class="time" ${taken ? 'disabled' : ''}>${fmtHour(h)}</button>`;
+  }
+  $('#times').innerHTML = slots;
+});
+$('#times').addEventListener('click', e => {
+  const b = e.target.closest('.time'); if (!b || b.disabled) return;
+  document.querySelectorAll('.time').forEach(x => x.classList.toggle('sel', x === b));
+  state.time = b.textContent; $('#to3').disabled = false;
+});
+$('#confirmBtn').onclick = () => {
+  const f = $('#bookForm'); if (!f.reportValidity()) return;
+  const name = $('#fn').value.trim();
+  $('#confirmMsg').textContent = `Thanks, ${name}! A confirmation is on its way to ${$('#em').value} and we'll text you a reminder the day before.`;
+  $('#confirmDetail').innerHTML = `
+    <div><span>Treatment</span><b>${state.svc.name}</b></div>
+    <div><span>Date</span><b>${state.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</b></div>
+    <div><span>Time</span><b>${state.time}</b></div>
+    <div><span>Where</span><b>777 N Green St, Ste 4</b></div>`;
+  go(4); document.querySelectorAll('.steps div').forEach(s => s.className = 'done');
+};
+$('#restart').onclick = () => { $('#bookForm').reset(); state.svc = null; document.querySelectorAll('#bookOpts .opt').forEach(o => o.classList.remove('sel')); $('#to2').disabled = true; $('#svcHint').textContent = 'Select a treatment'; go(1); };
+
+// Reviews (placeholders; would be replaced with live Google reviews)
+const REVIEWS = [
+  { n: 'Sarah M.', t: '2 days ago', s: 5, txt: 'Angelica is amazing. She explained every option and never pushed. My Botox looks completely natural. Booking online was so easy!', r: 'Thank you, Sarah! Angelica will be thrilled. We love hearing that your results feel like you. See you at your two-week check-in!', rt: '2 hrs' },
+  { n: 'Danielle K.', t: '1 week ago', s: 5, txt: 'Been coming for years. They always stay on top of the latest treatments and technology. Sofwave was a game changer for my jawline.', r: 'Danielle, thank you for years of trust! We\'re so glad Sofwave delivered. Your loyalty means the world to our team.', rt: '4 hrs' },
+  { n: 'Priya R.', t: '2 weeks ago', s: 4, txt: 'Great facial and a really calming space. I had to wait about 15 minutes past my appointment time, but the service itself was excellent.', r: 'Priya, thank you for the honest feedback, and we\'re sorry about the wait. That isn\'t the experience we want for you. We\'ve adjusted our scheduling buffers, and we\'d love to treat you to an add-on at your next visit.', rt: '3 hrs' }
+];
+function revCard(r, pending) {
+  return `<div class="rev"><div class="rev-top"><div class="who"><div class="avatar">${r.n[0]}</div><div><b>${r.n}</b><small>${r.t} · Google</small></div></div><span class="stars">${'★'.repeat(r.s)}${'☆'.repeat(5 - r.s)}</span></div>
+    <p>${r.txt}</p>
+    <div class="reply">${pending ? '<b>SOLUX Med Spa is replying…</b><span class="typing"><i></i><i></i><i></i></span>' : `<b><span>Response from SOLUX</span><span class="badge">Replied in ${r.rt}</span></b>${r.r}`}</div></div>`;
+}
+$('#revGrid').innerHTML = REVIEWS.map(r => revCard(r)).join('');
+
+let rating = 5;
+$('#rate').innerHTML = [1, 2, 3, 4, 5].map(i => `<button type="button" data-v="${i}" class="on" aria-label="${i} stars">★</button>`).join('');
+$('#rate').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; rating = +b.dataset.v;
+  document.querySelectorAll('#rate button').forEach(x => x.classList.toggle('on', +x.dataset.v <= rating));
+});
+$('#revForm').onsubmit = e => {
+  e.preventDefault();
+  const name = $('#rName').value.trim(), txt = $('#rText').value.trim();
+  const esc = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const r = { n: esc(name), t: 'Just now', s: rating, txt: esc(txt), rt: 'under a minute' };
+  r.r = rating >= 4
+    ? `Thank you so much, ${r.n}! We're so happy you had a great visit, and we can't wait to see you again soon.`
+    : `${r.n}, thank you for telling us. We're sorry your visit fell short. Our manager will reach out personally today to make this right.`;
+  const holder = document.createElement('div');
+  holder.innerHTML = revCard(r, true);
+  const card = holder.firstElementChild;
+  $('#revGrid').prepend(card);
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  e.target.reset(); rating = 5; document.querySelectorAll('#rate button').forEach(x => x.classList.add('on'));
+  setTimeout(() => { card.outerHTML = revCard(r); toast('Team notified · reply posted'); }, 2200);
+};
+
+// Hours
+const todayIdx = new Date().getDay();
+$('#hours').innerHTML = [2, 3, 4, 5, 6, 0, 1].map(d => `<li class="${d === todayIdx ? 'today' : ''}"><span>${DAY[d]}</span><span>${HOURS[d] ? fmtHour(HOURS[d][0]) + ' – ' + fmtHour(HOURS[d][1]) : 'Closed'}</span></li>`).join('');
+
+// Chat concierge
+$('#chatFab').onclick = () => $('#chat').classList.toggle('open');
+const ANSWERS = {
+  'Book an appointment': 'Easy! Tap below and pick any open time. It takes under a minute. <a href="#book">Open booking →</a>',
+  'What are your hours?': 'Tue, Wed & Fri 10–5 · Thu 10–7 · Sat 10–2. Closed Sun & Mon. Online booking is open 24/7.',
+  'Where are you located?': '777 N Green St, Suite 4, Chicago, IL 60642 in West Town. <a href="https://maps.google.com/?q=777+N+Green+St+Suite+4+Chicago+IL+60642" target="_blank" rel="noopener">Directions →</a>',
+  'Do you offer free consults?': 'Yes! Consultations are complimentary. We\'ll recommend a plan for your goals with no pressure. <a href="#book">Book a consult →</a>'
+};
+$('#quick').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const body = $('#chatBody');
+  body.insertAdjacentHTML('beforeend', `<div class="msg me">${b.textContent}</div>`);
+  setTimeout(() => { body.insertAdjacentHTML('beforeend', `<div class="msg bot">${ANSWERS[b.textContent]}</div>`); body.scrollTop = body.scrollHeight; }, 500);
+  body.scrollTop = body.scrollHeight;
+});
+document.addEventListener('click', e => { if (e.target.closest('.chat a[href="#book"]')) $('#chat').classList.remove('open'); });
+</script>
+</body>
+</html>
