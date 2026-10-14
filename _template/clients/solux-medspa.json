@@ -1,0 +1,99 @@
+{
+  "slug": "solux-medspa",
+  "builtBy": "Chicago AI Group",
+
+  "business": {
+    "name": "SOLUX Med Spa",
+    "shortName": "SOLUX",
+    "logoTagline": "MED SPA · CHICAGO",
+    "neighborhood": "West Town Chicago"
+  },
+
+  "contact": {
+    "phone": "(312) 755-0088",
+    "street": "777 N Green St, Suite 4",
+    "cityStateZip": "Chicago, IL 60642",
+    "email": ""
+  },
+
+  "hours": {
+    "mon": null,
+    "tue": "10:00-17:00",
+    "wed": "10:00-17:00",
+    "thu": "10:00-19:00",
+    "fri": "10:00-17:00",
+    "sat": "10:00-14:00",
+    "sun": null
+  },
+
+  "rating": { "stars": 4.6, "count": 128, "source": "Google" },
+
+  "pitch": {
+    "replyPromise": "< 24h",
+    "avgReplyTime": "3 hrs",
+    "showConceptBanner": true
+  },
+
+  "theme": {
+    "ink": "#2b2522",
+    "background": "#fbf8f5",
+    "sand": "#f1e8df",
+    "accent": "#b0876a",
+    "accentDark": "#835f44"
+  },
+
+  "hero": {
+    "eyebrow": "Medical aesthetics · West Town, Chicago",
+    "headline": "Look like you.",
+    "headlineAccent": "Just more rested.",
+    "subhead": "Natural-looking injectables, advanced laser, and results-driven skin treatments from a medically led team. Book any time, day or night, in under 60 seconds.",
+    "image": "",
+    "recentBooking": { "name": "Jordan", "service": "a Sofwave™ treatment", "when": "Thursday · 4:30 PM" }
+  },
+
+  "services": {
+    "headline": "Everything your skin needs, under one roof",
+    "intro": "Not sure where to start? Book a complimentary consultation and we'll build a plan around your goals.",
+    "list": [
+      { "name": "Botox & Neurotoxins", "icon": "syringe", "minutes": 30, "description": "Soften forehead lines, crow's feet and frown lines for a refreshed, natural look." },
+      { "name": "Dermal Fillers", "icon": "drop", "minutes": 45, "description": "Restore volume to lips, cheeks and under-eyes with expert, balanced placement." },
+      { "name": "Sofwave™ Skin Tightening", "icon": "wave", "minutes": 60, "description": "Non-invasive ultrasound that lifts and tightens the brow, neck and jawline." },
+      { "name": "Laser Hair Removal", "icon": "sun", "minutes": 30, "description": "Long-lasting smooth skin with fast, comfortable sessions for any area." },
+      { "name": "Microneedling & PRP", "icon": "sparkle", "minutes": 60, "description": "Boost collagen to refine texture, pores and acne scarring." },
+      { "name": "Facials & Chemical Peels", "icon": "leaf", "minutes": 60, "description": "Customized facials and peels for glow, clarity and even tone." },
+      { "name": "Body Contouring", "icon": "body", "minutes": 60, "description": "CoolSculpting® and lymphatic drainage to sculpt and de-puff." },
+      { "name": "IV Therapy", "icon": "iv", "minutes": 45, "description": "Hydration and vitamin drips for energy, recovery and radiant skin." },
+      { "name": "Free Consultation", "icon": "heart", "minutes": 20, "description": "Not sure what you need? Meet with our team and leave with a plan." }
+    ]
+  },
+
+  "reviews": [
+    {
+      "name": "Sarah M.", "when": "2 days ago", "stars": 5, "replyTime": "2 hrs",
+      "text": "Angelica is amazing. She explained every option and never pushed. My Botox looks completely natural. Booking online was so easy!",
+      "reply": "Thank you, Sarah! Angelica will be thrilled. We love hearing that your results feel like you. See you at your two-week check-in!"
+    },
+    {
+      "name": "Danielle K.", "when": "1 week ago", "stars": 5, "replyTime": "4 hrs",
+      "text": "Been coming for years. They always stay on top of the latest treatments and technology. Sofwave was a game changer for my jawline.",
+      "reply": "Danielle, thank you for years of trust! We're so glad Sofwave delivered. Your loyalty means the world to our team."
+    },
+    {
+      "name": "Priya R.", "when": "2 weeks ago", "stars": 4, "replyTime": "3 hrs",
+      "text": "Great facial and a really calming space. I had to wait about 15 minutes past my appointment time, but the service itself was excellent.",
+      "reply": "Priya, thank you for the honest feedback, and we're sorry about the wait. That isn't the experience we want for you. We've adjusted our scheduling buffers, and we'd love to treat you to an add-on at your next visit."
+    }
+  ],
+
+  "about": {
+    "headline": "Medical expertise, boutique warmth",
+    "body": "SOLUX is a medically directed med spa in Chicago's West Town. Our clients tell us they stay because we keep up with the newest treatments and technology, and because our team takes the time to explain every option before anything begins.",
+    "image": "",
+    "pillars": [
+      { "title": "Medically led", "text": "Every treatment overseen by licensed medical professionals" },
+      { "title": "Natural results", "text": "Subtle enhancements, never overdone" },
+      { "title": "Latest technology", "text": "Including Sofwave™ ultrasound skin tightening" },
+      { "title": "Personal plans", "text": "Complimentary consults tailored to your goals" }
+    ]
+  }
+}

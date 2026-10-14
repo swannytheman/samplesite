@@ -1,0 +1,4 @@
+# GitHub Pages: publish only the generated sites; underscore folders (_template) are skipped automatically
+exclude:
+  - README.md
+  - CLAUDE.md

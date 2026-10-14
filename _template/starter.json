@@ -1,0 +1,95 @@
+{
+  "slug": "glow-aesthetics",
+  "builtBy": "Chicago AI Group",
+
+  "business": {
+    "name": "Glow Aesthetics",
+    "shortName": "GLOW",
+    "logoTagline": "AESTHETICS · LINCOLN PARK",
+    "neighborhood": "Lincoln Park Chicago"
+  },
+
+  "contact": {
+    "phone": "(312) 555-0142",
+    "street": "2400 N Clark St",
+    "cityStateZip": "Chicago, IL 60614",
+    "email": "hello@example.com"
+  },
+
+  "hours": {
+    "mon": "09:00-18:00",
+    "tue": "09:00-18:00",
+    "wed": "09:00-18:00",
+    "thu": "09:00-20:00",
+    "fri": "09:00-18:00",
+    "sat": "09:30-15:00",
+    "sun": null
+  },
+
+  "rating": { "stars": 4.8, "count": 210, "source": "Google" },
+
+  "pitch": {
+    "replyPromise": "< 24h",
+    "avgReplyTime": "2 hrs",
+    "showConceptBanner": true
+  },
+
+  "theme": {
+    "ink": "#1f2a2e",
+    "background": "#f7faf9",
+    "sand": "#e3eeeb",
+    "accent": "#7fa8a0",
+    "accentDark": "#3f6f66"
+  },
+
+  "hero": {
+    "eyebrow": "Skin & injectables · Lincoln Park",
+    "headline": "Your best skin.",
+    "headlineAccent": "On your schedule.",
+    "subhead": "Expert injectables, laser and facials from a nurse-led team. Book online any time in under a minute.",
+    "image": ""
+  },
+
+  "services": {
+    "headline": "Treatments we're known for",
+    "intro": "Every visit starts with a plan built around your goals, not a menu.",
+    "list": [
+      { "name": "Botox & Dysport", "icon": "syringe", "minutes": 30, "price": "from $12/unit", "description": "Smooth lines and prevent new ones with natural-looking results." },
+      { "name": "Lip Filler", "icon": "lips", "minutes": 45, "price": "from $650", "description": "Subtle volume and definition, tailored to your face." },
+      { "name": "HydraFacial", "icon": "drop", "minutes": 60, "price": "from $199", "description": "Deep cleanse, exfoliate and hydrate with zero downtime." },
+      { "name": "Laser Hair Removal", "icon": "sun", "minutes": 30, "description": "Fast, comfortable sessions for smooth skin that lasts." },
+      { "name": "Microneedling", "icon": "sparkle", "minutes": 60, "description": "Collagen induction for texture, scarring and pores." },
+      { "name": "Free Consultation", "icon": "heart", "minutes": 20, "description": "Meet our team and leave with a personalized plan." }
+    ]
+  },
+
+  "reviews": [
+    {
+      "name": "Alex T.", "when": "3 days ago", "stars": 5, "replyTime": "1 hr",
+      "text": "The team made me feel so comfortable. Results look natural and booking was effortless.",
+      "reply": "Thank you, Alex! We're so glad you felt at ease. See you next time!"
+    },
+    {
+      "name": "Morgan L.", "when": "1 week ago", "stars": 5, "replyTime": "3 hrs",
+      "text": "Best HydraFacial I've had in the city. My skin was glowing for days.",
+      "reply": "Morgan, that's music to our ears! Thanks for trusting us with your skin."
+    },
+    {
+      "name": "Chris P.", "when": "2 weeks ago", "stars": 4, "replyTime": "2 hrs",
+      "text": "Great service and results. Parking was a bit tricky to find.",
+      "reply": "Thanks, Chris! Great tip. We've added parking directions to our confirmation texts."
+    }
+  ],
+
+  "about": {
+    "headline": "Nurse-led care, spa-level comfort",
+    "body": "Glow Aesthetics pairs clinical expertise with a calm, welcoming space. We take the time to understand your goals and recommend only what you need.",
+    "image": "",
+    "pillars": [
+      { "title": "Nurse injectors", "text": "Licensed, experienced and continually trained" },
+      { "title": "Natural results", "text": "Enhance, never overdo" },
+      { "title": "Honest advice", "text": "No upselling, ever" },
+      { "title": "Easy booking", "text": "Online 24/7 with instant confirmation" }
+    ]
+  }
+}
